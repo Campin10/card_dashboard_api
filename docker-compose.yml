@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - backend
+networks:
+  backend:
+volumes:
+  mongodb_data_container:
